@@ -1,12 +1,15 @@
 public class Main {
     public static void main(String[] args) {
+        int denominator = 100;
+        int multiplier = 7;
+        int halfYear = 6;
         System.out.println("Задача 1");
         int total = 0;
         int deposit = 15000;
         int month = 1;
         while (total <= 2_459_000) {
-            total = total + total / 100;
-            total = total + deposit;
+            total = (int) (total + total * 0.01);
+            total += +deposit;
             System.out.println("Месяц " + month + ", сумма накоплений равна " + total + " рублей.");
             month++;
         }
@@ -36,32 +39,32 @@ public class Main {
         System.out.println();
         System.out.println("Задача 4");
         int totalVasin = 15000;
-        int m = 1;
+        int monthForTask4 = 1;
         while (totalVasin <= 12_000_000) {
-            totalVasin = totalVasin + ((totalVasin / 100) * 7);
-            System.out.println("Месяц " + m + ", сумма накоплений составляет " + totalVasin + ".");
-            m++;
+            totalVasin += +((totalVasin / denominator) * multiplier);
+            System.out.println("Месяц " + monthForTask4 + ", сумма накоплений составляет " + totalVasin + ".");
+            monthForTask4++;
         }
         System.out.println();
         System.out.println("Задача 5");
         int totalVasin2 = 15000;
-        int m2 = 1;
+        int monthForTask5 = 1;
         while (totalVasin2 <= 12_000_000) {
-            totalVasin2 = totalVasin2 + ((totalVasin2 / 100) * 7);
-            if (m2 % 6 == 0) {
-                System.out.println("Месяц " + m2 + ", сумма накоплений составляет " + totalVasin2 + ".");
+            totalVasin2 += +((totalVasin2 / denominator) * multiplier);
+            if (monthForTask5 % halfYear == 0) {
+                System.out.println("Месяц " + monthForTask5 + ", сумма накоплений составляет " + totalVasin2 + ".");
             }
-            m2++;
+            monthForTask5++;
         }
         System.out.println();
         System.out.println("Задача 6");
         int totalVasin3 = 15000;
-        int m3 = 1;
+        int monthForTask6 = 1;
         int savingPeriod = 9 * 12;
-        for (; m3 <= savingPeriod; m3++) {
-            totalVasin3 = totalVasin3 + ((totalVasin3 / 100) * 7);
-            if (m3 % 6 == 0) {
-                System.out.println("Месяц " + m3 + ", сумма накоплений составляет " + totalVasin3 + ".");
+        for (; monthForTask6 <= savingPeriod; monthForTask6++) {
+            totalVasin3 += +((totalVasin3 / denominator) * multiplier);
+            if (monthForTask6 % halfYear == 0) {
+                System.out.println("Месяц " + monthForTask6 + ", сумма накоплений составляет " + totalVasin3 + ".");
             }
         }
         System.out.println();
